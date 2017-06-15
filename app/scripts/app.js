@@ -70,6 +70,22 @@ angular.module('ngmaterialApp', [
         controller: 'WriterCtrl'
       }
     }
+  }).state('app.score', {
+    url: '/score',
+    views: {
+      'menuContent': {
+        templateUrl: 'views/score/score.html',
+        controller: 'ScoreCtrl'
+      }
+    }
+  }).state('app.spreadsheet', {
+    url: '/spreadsheet',
+    views: {
+      'menuContent': {
+        templateUrl: 'views/score/spreadsheet.html',
+        controller: 'SheetCtrl'
+      }
+    }
   });
 
   $urlRouterProvider.otherwise('/app/home');
@@ -90,6 +106,14 @@ function AppCtrl($scope, $location, $mdSidenav, $mdToast) {
 
   $scope.goWriter = function() {
     $location.path('/app/writer');
+  };
+
+  $scope.goScore = function() {
+    $location.path('/app/score');
+  };
+
+  $scope.goSheet = function() {
+    $location.path('/app/spreadsheet');
   };
 
   $scope.toggleSidenav = function() {
